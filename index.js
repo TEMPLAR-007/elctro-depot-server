@@ -37,14 +37,7 @@ async function run() {
         const productCollection = client.db('electroDepot').collection('product');
 
         // AUTH
-        app.post('/login', async (req, res) => {
-            const user = req.body;
-            const accessToken = jwt.sign(user, process.env.ACCESS_SECRET_TOKEN, {
-                expiresIn: '1d'
-            });
-            res.send({ accessToken });
 
-        })
 
         // SERVICES API
         app.get('/product', async (req, res) => {
